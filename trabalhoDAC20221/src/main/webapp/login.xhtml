@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<h:head><title>Tela de Login</title></h:head>
+	<body>
+		<h:form id="Formulario">
+		<p:messages id="messages" showDetail="true" closable="true">
+            <p:autoUpdate/>
+        </p:messages>
+		<p:panel header="Insira Seus Dados">
+		<h:inputHidden value="#{loginBean.usuarios.id}"/>
+				<p:panelGrid columns="2">
+					
+					
+					<p:outputLabel value="Usuario"/>
+					<p:inputText value="#{loginBean.usuarios.nome}"/>
+					
+					<p:outputLabel value="Senha"/>
+					<p:inputText value="#{loginBean.usuarios.senha}"/>
+					
+
+					
+					<p:commandButton value="Entrar" action="#{loginBean.entrar}" />
+				</p:panelGrid>
+			</p:panel>
+		</h:form>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<h:head><title>Lista</title></h:head>
+	<h:body>
+		<h:form id="Formulario">
+		<p:messages id="messages" showDetail="true" closable="true">
+            <p:autoUpdate/>
+        </p:messages>
+			<p:dataTable value="#{locaisBean.lista}" var="l">
+				<p:column>
+					<f:facet name="header">Estado</f:facet>
+					<p:outputLabel value="#{l.estado}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Município</f:facet>
+					<p:outputLabel value="#{l.municipio}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">População</f:facet>
+					<p:outputLabel value="#{l.populacao}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Data de Cadastro</f:facet>
+					<p:outputLabel value="#{l.dataCadastro}"/>
+				</p:column>
+				<p:column>
+					<p:commandLink value="Editar" action="edicao" ajax="false">
+						<f:setPropertyActionListener value="#{l}" target="#{locaisBean.locais}"/>
+					</p:commandLink>
+				</p:column>
+				<p:column>
+					<p:commandLink value="Excluir" action="#{locaisBean.apagar}" ajax="false">
+						<f:setPropertyActionListener value="#{l}" target="#{locaisBean.locais}"/>
+					</p:commandLink>
+				</p:column>
+			</p:dataTable>
+			<p:commandButton value="Total" icon="pi pi-bookmark" action="#{locaisBean.contar}"/>
+			<p:linkButton outcome="index" value="Voltar" style="margin-right:20px;"/>
+		</h:form>
+	</h:body>
+</html>
