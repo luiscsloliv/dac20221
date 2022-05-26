@@ -11,15 +11,14 @@
 		<p:messages id="messages" showDetail="true" closable="true">
             <p:autoUpdate/>
         </p:messages>
-		<p:panel header="Cadastro de Jogo">
+		<p:panel header="Atualizar Cadastro de Jogo">
+		<h:inputHidden value="#{jogoBean.jogo.id}"/>
 				<p:panelGrid columns="2">
 					
 					<p:outputLabel value="Descrição"/>
 					<p:inputText value="#{jogoBean.jogo.descricao}"/>
 					
-					<p:commandButton value="Salvar" action="#{jogoBean.salvar}" update="Formulario"/>
-					
-					<p:linkButton outcome="listagem" value="Listar" style="margin-right:20px;"/>
+					<p:commandButton value="Editar" action="#{jogoBean.editar}" update="Formulario"/>
 				</p:panelGrid>
 			</p:panel>
 		</h:form>

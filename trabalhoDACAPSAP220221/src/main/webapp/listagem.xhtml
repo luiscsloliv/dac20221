@@ -11,16 +11,58 @@
 		<p:messages id="messages" showDetail="true" closable="true">
             <p:autoUpdate/>
         </p:messages>
+        <h:inputHidden value="#{jogoBean.jogo.id}"/>
 			<p:dataTable value="#{jogoBean.lista}" var="j">
 				<p:column>
 					<f:facet name="header">Descrição</f:facet>
-					<p:outputLabel value="#{l.descricao}"/>
-				</p:column>
-					<f:facet name="header">Data de Criação</f:facet>
-					<p:outputLabel value="#{l.dataCriacao}"/>
+					<p:outputLabel value="#{j.descricao}"/>
 				</p:column>
 				<p:column>
-					<p:commandButton value="Pares" icon="pi pi-bookmark" action="#{jogoBean.contar}"/>
+					<f:facet name="header">Data de Criação</f:facet>
+					<p:outputLabel value="#{j.dataCriacao}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Valor 1</f:facet>
+					<p:outputLabel value="#{j.v1}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Valor 2</f:facet>
+					<p:outputLabel value="#{j.v2}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Valor 3</f:facet>
+					<p:outputLabel value="#{j.v3}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Valor 4</f:facet>
+					<p:outputLabel value="#{j.v4}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Valor 5</f:facet>
+					<p:outputLabel value="#{j.v5}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Valor 6</f:facet>
+					<p:outputLabel value="#{j.v6}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Valor 7</f:facet>
+					<p:outputLabel value="#{j.v7}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Valor 8</f:facet>
+					<p:outputLabel value="#{j.v8}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Valor 9</f:facet>
+					<p:outputLabel value="#{j.v9}"/>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Valor 10</f:facet>
+					<p:outputLabel value="#{j.v10}"/>
+				</p:column>
+				<p:column>
+					<p:commandButton value="Pares" icon="pi pi-bookmark" action="#{jogoBean.buscaPares}"/>
 				</p:column>
 				<p:column>
 					<p:commandLink value="Editar" action="edicao" ajax="false">
