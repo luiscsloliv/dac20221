@@ -47,8 +47,8 @@ public class JogoBean {
 		return null;
 	}
 	public String buscaPares() {
-		List<Jogo> l = JogoDAO.buscaPares(jogo);
-		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Atenção", "Existem " + l.toString() + " registros!");
+		List<Integer> l = JogoDAO.buscaPares(jogo);
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Atenção", "Os números pares são: " + l + " !");
 	    PrimeFaces.current().dialog().showMessageDynamic(message);
 		return null;
 		

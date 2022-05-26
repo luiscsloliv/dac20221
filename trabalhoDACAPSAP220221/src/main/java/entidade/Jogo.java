@@ -1,6 +1,8 @@
 package entidade;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Random;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,9 +10,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 public class Jogo {
+	@Transient
+	private Random rd = new Random();
 	@Id
 	@GeneratedValue
 	private Integer id;
@@ -18,16 +23,21 @@ public class Jogo {
 	@Column(name = "dt_criacao")
 	@Temporal(TemporalType.DATE)
 	private Date 	dataCriacao;
-	private Integer v1;
-	private Integer v2;
-	private Integer v3;
-	private Integer v4;
-	private Integer v5;
-	private Integer v6;
-	private Integer v7;
-	private Integer v8;
-	private Integer v9;
-	private Integer v10;
+	private Integer v1 = rd.nextInt(30);
+	private Integer v2 = rd.nextInt(30);
+	private Integer v3 = rd.nextInt(30);
+	private Integer v4 = rd.nextInt(30);
+	private Integer v5 = rd.nextInt(30);
+	private Integer v6 = rd.nextInt(30);
+	private Integer v7 = rd.nextInt(30);
+	private Integer v8 = rd.nextInt(30);
+	private Integer v9 = rd.nextInt(30);
+	private Integer v10 = rd.nextInt(30);
+	
+	public List<Integer> getPares() {
+		return List.of(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10).stream().filter(v -> v % 2 == 0).toList();
+	}
+	
 	public Integer getId() {
 		return id;
 	}

@@ -62,7 +62,9 @@
 					<p:outputLabel value="#{j.v10}"/>
 				</p:column>
 				<p:column>
-					<p:commandButton value="Pares" icon="pi pi-bookmark" action="#{jogoBean.buscaPares}"/>
+					<p:commandButton value="Pares" icon="pi pi-bookmark" action="#{jogoBean.buscaPares}">
+						<f:setPropertyActionListener value="#{j}" target="#{jogoBean.jogo}"/>
+					</p:commandButton>
 				</p:column>
 				<p:column>
 					<p:commandLink value="Editar" action="edicao" ajax="false">
