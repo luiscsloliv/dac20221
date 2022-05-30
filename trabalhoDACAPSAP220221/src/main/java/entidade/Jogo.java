@@ -1,5 +1,6 @@
 package entidade;
 
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -21,8 +22,9 @@ public class Jogo {
 	private Integer id;
 	private String 	descricao;
 	@Column(name = "dt_criacao")
-	@Temporal(TemporalType.DATE)
-	private Date 	dataCriacao;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date    dataCriacao = new Date();
+	//System.currentTimeMillis()
 	private Integer v1 = rd.nextInt(30);
 	private Integer v2 = rd.nextInt(30);
 	private Integer v3 = rd.nextInt(30);
@@ -50,12 +52,15 @@ public class Jogo {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+
 	public Date getDataCriacao() {
 		return dataCriacao;
 	}
+
 	public void setDataCriacao(Date dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
+
 	public Integer getV1() {
 		return v1;
 	}
